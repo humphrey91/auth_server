@@ -11,6 +11,8 @@ services:
   server:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    environment:
+      - SECRET_KEY_BASE=$SECRET_KEY_BASE
     volumes:
       - .:/auth_server
       - ~/.aws:/root/.aws
