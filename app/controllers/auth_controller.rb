@@ -4,7 +4,7 @@ class AuthController < ApplicationController
   def create
     user = User.find_by(email: auth_params[:email])
     if user && user.authenticate(auth_params[:password])
-      jwt = Auth.issue({user: {id: user.id}})
+      jwt = Auth.issue({user: user.id})
       cookies.signed[:jwt] = {
         value:  jwt,
         httponly: true,

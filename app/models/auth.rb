@@ -10,13 +10,9 @@ class Auth
   end
 
   def self.decode(token)
-    begin
-      JWT.decode(token, 
-        AUTH_SECRET_KEY, 
-        true, 
-        { algorithm: ALGORITHM }).first
-    rescue
-      nil
-    end
+    JWT.decode(token, 
+      AUTH_SECRET_KEY, 
+      true, 
+      { algorithm: ALGORITHM }).first.with_indifferent_access
   end
 end
