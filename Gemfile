@@ -35,6 +35,8 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'simplecov-shields-badge', require: false
 end
 
 group :development do

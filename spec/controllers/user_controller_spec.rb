@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe UserController, type: :controller do
+  let(:password) { "123456" }
 
-  describe "GET #create" do
+  describe "POST #create" do
     it "returns http success" do
-      # get :create
-      # expect(response).to have_http_status(:success)
+      post :create, params: { user: { email: "testemail@localhost.com", password: password } }
+      expect(response).to have_http_status(:success)
     end
   end
 

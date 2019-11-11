@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   include ::ActionController::Cookies
-  before_action :authenicate_user
+  before_action :authenticate_user
 
   private
   
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
     @current_user ||= User.find(@current_user_id)
   end
 
-  def authenicate_user
+  def authenticate_user
     jwt = cookies.signed[:jwt]
     begin
       jwt_payload = Auth.decode(jwt)
