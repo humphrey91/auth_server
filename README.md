@@ -1,2 +1,2 @@
 # Auth Server 
-[![Coverage](https://USERNAME.github.io/REPO/badge.svg)](https://github.com/USERNAME/REPO)
+[![Coverage](https://humphrey91.github.io/auth_server/badge.svg)](https://github.com/humphrey91/auth_server)
